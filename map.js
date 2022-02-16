@@ -30,14 +30,7 @@ function initMap(){
 		var my_icon2 = L.divIcon({
 			html: "logo.png" 
 			});
-
-			
-		
-
 		//layer = L.marker(latlng1, {icon: my_icon} ).addTo(map);
-		//layer = L.marker([63.3 ,75.46], {icon: my_icon} ).addTo(map);
-	
-
 
 		var mmm = [];
 		markser.forEach(function(e){
@@ -51,9 +44,7 @@ function initMap(){
 			mmm.push(e.lat_lng);	
 		});
 
-
 		map.fitBounds(L.latLngBounds(mmm))
-
  		map.on('locationfound', onLocationFound);
 		map.locate({watch:true, enableHighAccuracy: true});
 
@@ -69,7 +60,7 @@ function onLocationFound(e) {
 	}else{
 		user_loc = {
 			loc : e,
-			marker : L.marker(user_loc.latlng).addTo(map),
+			marker : L.marker(e.latlng).addTo(map),
 			circle : L.circle(e.latlng, e.accuracy / 2).addTo(map)
 		};
 }
