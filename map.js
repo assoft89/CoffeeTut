@@ -62,7 +62,7 @@ function initMap(){
 		
 }
 function onLocationFound(e) {
-	if (user_loc){
+	if (typeof user_loc ==! 'undefined'){
 		user_loc.marker.setLatLng(e.latLng);
 		circle.setLatLng(e.latLng);
 		circle.setRadius(e / 2);
