@@ -54,7 +54,7 @@ function initMap(){
 		map.fitBounds(L.latLngBounds(mmm))
 
  		map.on('locationfound', onLocationFound);
-		
+		map.locate();
 
 	//.bindPopup('Click on Map for new position for layer')
     //.openPopup();
