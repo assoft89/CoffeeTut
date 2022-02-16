@@ -54,7 +54,7 @@ function initMap(){
 }
 function onLocationFound(e) {
 	if (typeof user_loc !== 'undefined'){
-		user_loc.marker.setLatLng(e.latLng);
+		user_loc.marker.setLatLng(e.latlng);
 		circle.setLatLng(e.latLng);
 		circle.setRadius(e.accuracy / 2);
 	}else{
