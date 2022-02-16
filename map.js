@@ -56,7 +56,7 @@ function onLocationFound(e) {
 	if (typeof user_loc !== 'undefined'){
 		user_loc.marker.setLatLng(e.latLng);
 		circle.setLatLng(e.latLng);
-		circle.setRadius(e / 2);
+		circle.setRadius(e.accuracy / 2);
 	}else{
 		user_loc = {
 			loc : e,
