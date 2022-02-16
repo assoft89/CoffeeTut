@@ -1,7 +1,8 @@
 
 var map,
 	layer,
-	city_latlng = [63.2, 75.44];
+	city_latlng = [63.2, 75.44]
+	;
 	
 function initMap(){
 
@@ -54,19 +55,30 @@ function initMap(){
 		map.fitBounds(L.latLngBounds(mmm))
 
  		map.on('locationfound', onLocationFound);
-		map.locate();
+		map.locate({watch:true, enableHighAccuracy: true});
 
 	//.bindPopup('Click on Map for new position for layer')
     //.openPopup();
 		
 }
 function onLocationFound(e) {
-	var radius = e.accuracy / 2;
+	if (user_loc){
+		user_loc.marker.setLatLng(e.latLng);
+		circle.setLatLng(e.latLng);
+		circle.setRadius(e / 2);
+	}else{
+		user_loc = {
+			loc : e,
+			marker : L.marker(user_loc.latlng).addTo(map),
+			circle : L.circle(e.latlng, e.accuracy / 2).addTo(map)
+		};
+}
+	
 
-	L.marker(e.latlng).addTo(map);
+	
 		//.bindPopup("You are within " + radius + " meters from this point").openPopup();
 
-	L.circle(e.latlng, radius).addTo(map);
+	
 }
 
 function onMapClick(e) {
