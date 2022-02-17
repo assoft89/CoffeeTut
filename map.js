@@ -38,8 +38,8 @@ function initMap(){
 				html: "<img width=32px src=\'logo.png\'/><div style=\"width : min-content; width: 32px; text-align: center;\">"+e.name+"</div>", 
 				className: 'marker-my', 
 				iconSize: new L.Point(20, 20) });
-			layer = L.marker(e.lat_lng, {icon: icon} ).addTo(map);
-			//.bindPopup(e.name )
+			layer = L.marker(e.lat_lng, {icon: icon} ).addTo(map)
+			.bindPopup(e.street);
 			//.openPopup();
 			mmm.push(e.lat_lng);	
 		});
@@ -60,16 +60,11 @@ function onLocationFound(e) {
 	}else{
 		user_loc = {
 			loc : e,
-			marker : L.marker(e.latlng).addTo(map),
-			circle : L.circle(e.latlng, e.accuracy / 2).addTo(map)
+			circle : L.circle(e.latlng, e.accuracy / 2).addTo(map),
+			marker : L.marker(e.latlng).addTo(map)
 		};
 }
-	
-
-	
 		//.bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-	
 }
 
 function onMapClick(e) {
