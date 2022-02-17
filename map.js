@@ -39,7 +39,7 @@ function initMap(){
 				className: 'marker-my', 
 				iconSize: new L.Point(20, 20) });
 			layer = L.marker(e.lat_lng, {icon: icon} ).addTo(map)
-			.bindPopup(e.street);
+			.bindPopup(e.street + '<br> <a href="geo:'+e.lat_lng+'">Открыть другую карту</a>');
 			//.openPopup();
 			mmm.push(e.lat_lng);	
 		});
