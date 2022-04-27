@@ -68,6 +68,8 @@ function onLocationFound(e) {
 }
 
 function onMapClick(e) {
+	var lat_lng = (e.latlng.lat+'').substr(0,9) + ', '+(e.latlng.lng+'').substr(0,9);
+	console.log(lat_lng);
 	//mymap.setView(e.latlng, 14);
 	//layer.animateTo(e.latlng, {duration: 1000, pan : 'inbounds', complete : function(){console.log('finish')}})
 }
