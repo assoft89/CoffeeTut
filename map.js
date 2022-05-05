@@ -35,11 +35,20 @@ function initMap(){
 		var mmm = [];
 		markser.forEach(function(e){
 			var icon = L.divIcon({ 
-				html: "<img width=32px src=\'logo.png\'/><div style=\"width : min-content; width: 32px; text-align: center;\">"+e.name+"</div>", 
+				html: "<img width=32px src=\'logo.png\'/><div style=\"width : min-content; width: 32px; text-align: center;\">Кофе Тут</div>", 
 				className: 'marker-my', 
 				iconSize: new L.Point(20, 20) });
+				
+				var photos = '';
+				e.photos.forEach(function(e){
+					photos += "<img class='photo' src='photos/"+e+"'>"
+				});
+
+
+			var vk = '<div id="vk_post_-212956088_8"></div><script type="text/javascript" src="https://vk.com/js/api/openapi.js?169"></script><script type="text/javascript">  (function() {VK.Widgets.Post("vk_post_-212956088_8", -212956088, 8, "R3UNmVukiTT9vsaxtoRxf9-tc20l");  }());	</script>';	
+
 			layer = L.marker(e.lat_lng, {icon: icon} ).addTo(map)
-			.bindPopup(e.street + '<br> <a href="geo:'+e.lat_lng+'">Открыть другую карту</a>');
+			.bindPopup(e.street + '<br>' + vk+' <br><a href="geo:'+e.lat_lng+'">Открыть другую карту</a>');
 			//.openPopup();
 			mmm.push(e.lat_lng);	
 		});
