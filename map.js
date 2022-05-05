@@ -1,4 +1,6 @@
 
+
+
 var map,
 	layer,
 	city_latlng = [63.2, 75.44]
@@ -32,6 +34,8 @@ function initMap(){
 			});
 		//layer = L.marker(latlng1, {icon: my_icon} ).addTo(map);
 
+
+
 		var mmm = [];
 		markser.forEach(function(e){
 			var icon = L.divIcon({ 
@@ -45,22 +49,38 @@ function initMap(){
 				});
 
 
-			var vk = '<div id="vk_post_-212956088_8"></div><script type="text/javascript" src="https://vk.com/js/api/openapi.js?169"></script><script type="text/javascript">  (function() {VK.Widgets.Post("vk_post_-212956088_8", -212956088, 8, "R3UNmVukiTT9vsaxtoRxf9-tc20l");  }());	</script>';	
+		
+				var vk = '<a target="" href="'+e.url+'">Открыть запись на VK</a>';	
+
 
 			layer = L.marker(e.lat_lng, {icon: icon} ).addTo(map)
 			.bindPopup(e.street + '<br>' + vk+' <br><a href="geo:'+e.lat_lng+'">Открыть другую карту</a>');
 			//.openPopup();
+			layer.getPopup().my_load_vk = function(){
+				//VK.Widgets.Post("vk_post_-212956088_8", -212956088, 8, "R3UNmVukiTT9vsaxtoRxf9-tc20l"); 
+				
+				//this.getPopup().setContent($('#vk_post_-212956088_8').outerHTML);
+				
+			};
+			
 			mmm.push(e.lat_lng);	
 		});
 
 		map.fitBounds(L.latLngBounds(mmm))
  		map.on('locationfound', onLocationFound);
 		map.locate({watch:true, enableHighAccuracy: true});
+		map.on('popupopen', function(e) { 
+			//alert(e.popup._source._popup._content); 
+			e.popup.my_load_vk();
+			cur_popup = e.popup;
+		});
 
 	//.bindPopup('Click on Map for new position for layer')
     //.openPopup();
 		
 }
+
+
 function onLocationFound(e) {
 	if (typeof user_loc !== 'undefined'){
 		user_loc.marker.setLatLng(e.latlng);
