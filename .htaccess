@@ -1,0 +1,4 @@
+<IfModule dir_module>
+    Options -Indexes
+    DirectoryIndex index.html
+</IfModule>
