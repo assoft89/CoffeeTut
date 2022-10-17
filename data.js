@@ -7,4 +7,5 @@ var markser =
     {street: "пр-кт Мира, 68а, ТЦ Афганец (Вторник выходной)", photos: [], lat_lng:[63.1994782, 75.4404605], url: "https://vk.com/wall-212956088_1"},
 	{street: "4-й проезд, панель 1/33а (Эко БАЗАР)", photos: [], lat_lng:[63.196718, 75.479142], url: "https://vk.com/wall-212956088_4"},
 	{street: "ул. Ленина, Цветочный ряд (павильён №14)", photos: [], lat_lng:[63.195636, 75.438614], url: "https://vk.com/coffee_tut_nsk"},
+	{street: "ул. Муравленко, 22 (Магнит)", photos: [], lat_lng:[63.190936, 75.413830], url: "https://vk.com/coffee_tut_nsk"},
 ]
