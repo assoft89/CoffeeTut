@@ -6,6 +6,5 @@ var markser =
     {street: "ул. Советская, 83, Магнит", photos: [], lat_lng:[63.199187, 75.461037], url: "https://vk.com/wall-212956088_3"},
     {street: "пр-кт Мира, 68а, ТЦ Афганец (Вторник выходной)", photos: [], lat_lng:[63.1994782, 75.4404605], url: "https://vk.com/wall-212956088_1"},
 	{street: "4-й проезд, панель 1/33а (Эко БАЗАР)", photos: [], lat_lng:[63.196718, 75.479142], url: "https://vk.com/wall-212956088_4"},
-	{street: "ул. Магистральная, 25б (Бойцовский клуб Бархо)", photos: [], lat_lng:[63.185653, 75.449449], url: "https://vk.com/coffee_tut_nsk"},
 	{street: "ул. Ленина, Цветочный ряд (павильён №14)", photos: [], lat_lng:[63.195636, 75.438614], url: "https://vk.com/coffee_tut_nsk"},
 ]
